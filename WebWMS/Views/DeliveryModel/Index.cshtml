@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebWMS.Models.DeliveryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateChangeTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateChangeTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DeliveryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DeliveryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DeliveryId })
+        </td>
+    </tr>
+}
+
+</table>

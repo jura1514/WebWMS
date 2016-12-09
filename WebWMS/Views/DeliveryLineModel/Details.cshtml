@@ -1,0 +1,74 @@
+﻿@model WebWMS.Models.DeliveryLineModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DeliveryLineModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryModel.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryModel.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcceptedQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcceptedQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RejectedQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RejectedQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isUsedForStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isUsedForStock)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DeliveryLineId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
