@@ -12,17 +12,17 @@ using WebWMS.Models;
 
 namespace WebWMS.Controllers.WebApi
 {
-    public class DeliveryWebController : ApiController
+    public class DeliveryModelApiController : ApiController
     {
-        private WMSContext db = new WMSContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/DeliveryWeb
-        public IEnumerable<DeliveryModel> GetDeliveryModels()
+        // GET: api/DeliveryModelApi
+        public IQueryable<DeliveryModel> GetDeliveryModels()
         {
-            return db.DeliveryModels.ToList();
+            return db.DeliveryModels;
         }
 
-        // GET: api/DeliveryWeb/5
+        // GET: api/DeliveryModelApi/5
         [ResponseType(typeof(DeliveryModel))]
         public IHttpActionResult GetDeliveryModel(int id)
         {
@@ -35,7 +35,7 @@ namespace WebWMS.Controllers.WebApi
             return Ok(deliveryModel);
         }
 
-        // PUT: api/DeliveryWeb/5
+        // PUT: api/DeliveryModelApi/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutDeliveryModel(int id, DeliveryModel deliveryModel)
         {
@@ -70,7 +70,7 @@ namespace WebWMS.Controllers.WebApi
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/DeliveryWeb
+        // POST: api/DeliveryModelApi
         [ResponseType(typeof(DeliveryModel))]
         public IHttpActionResult PostDeliveryModel(DeliveryModel deliveryModel)
         {
@@ -85,7 +85,7 @@ namespace WebWMS.Controllers.WebApi
             return CreatedAtRoute("DefaultApi", new { id = deliveryModel.DeliveryId }, deliveryModel);
         }
 
-        // DELETE: api/DeliveryWeb/5
+        // DELETE: api/DeliveryModelApi/5
         [ResponseType(typeof(DeliveryModel))]
         public IHttpActionResult DeleteDeliveryModel(int id)
         {

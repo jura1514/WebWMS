@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebWMS.Models.ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateChangeTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateChangeTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProdId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProdId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProdId })
+        </td>
+    </tr>
+}
+
+</table>

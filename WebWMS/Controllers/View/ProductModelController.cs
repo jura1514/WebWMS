@@ -10,107 +10,107 @@ using WebWMS.Models;
 
 namespace WebWMS.Controllers.View
 {
-    public class OrderModelController : Controller
+    public class ProductModelController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: OrderModel
+        // GET: ProductModel
         public ActionResult Index()
         {
-            return View(db.OrderModels.ToList());
+            return View(db.ProductModels.ToList());
         }
 
-        // GET: OrderModel/Details/5
-        public ActionResult Details(int? id)
+        // GET: ProductModel/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderModel orderModel = db.OrderModels.Find(id);
-            if (orderModel == null)
+            ProductModel productModel = db.ProductModels.Find(id);
+            if (productModel == null)
             {
                 return HttpNotFound();
             }
-            return View(orderModel);
+            return View(productModel);
         }
 
-        // GET: OrderModel/Create
+        // GET: ProductModel/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: OrderModel/Create
+        // POST: ProductModel/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OrderId,OrderState,Description,StateChangeTime")] OrderModel orderModel)
+        public ActionResult Create([Bind(Include = "ProdId,ProdState,StateChangeTime")] ProductModel productModel)
         {
             if (ModelState.IsValid)
             {
-                db.OrderModels.Add(orderModel);
+                db.ProductModels.Add(productModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(orderModel);
+            return View(productModel);
         }
 
-        // GET: OrderModel/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: ProductModel/Edit/5
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderModel orderModel = db.OrderModels.Find(id);
-            if (orderModel == null)
+            ProductModel productModel = db.ProductModels.Find(id);
+            if (productModel == null)
             {
                 return HttpNotFound();
             }
-            return View(orderModel);
+            return View(productModel);
         }
 
-        // POST: OrderModel/Edit/5
+        // POST: ProductModel/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OrderId,OrderState,Description,StateChangeTime")] OrderModel orderModel)
+        public ActionResult Edit([Bind(Include = "ProdId,ProdState,StateChangeTime")] ProductModel productModel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(orderModel).State = EntityState.Modified;
+                db.Entry(productModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(orderModel);
+            return View(productModel);
         }
 
-        // GET: OrderModel/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: ProductModel/Delete/5
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderModel orderModel = db.OrderModels.Find(id);
-            if (orderModel == null)
+            ProductModel productModel = db.ProductModels.Find(id);
+            if (productModel == null)
             {
                 return HttpNotFound();
             }
-            return View(orderModel);
+            return View(productModel);
         }
 
-        // POST: OrderModel/Delete/5
+        // POST: ProductModel/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            OrderModel orderModel = db.OrderModels.Find(id);
-            db.OrderModels.Remove(orderModel);
+            ProductModel productModel = db.ProductModels.Find(id);
+            db.ProductModels.Remove(productModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

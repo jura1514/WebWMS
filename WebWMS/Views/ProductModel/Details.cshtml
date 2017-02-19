@@ -1,0 +1,34 @@
+﻿@model WebWMS.Models.ProductModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateChangeTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateChangeTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProdId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

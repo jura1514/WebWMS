@@ -12,17 +12,17 @@ using WebWMS.Models;
 
 namespace WebWMS.Controllers.WebApi
 {
-    public class DeliveryLineWebController : ApiController
+    public class DeliveryLineModelApiController : ApiController
     {
-        private WMSContext db = new WMSContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/DeliveryLineWeb
+        // GET: api/DeliveryLineModelApi
         public IQueryable<DeliveryLineModel> GetDeliveryLineModels()
         {
             return db.DeliveryLineModels;
         }
 
-        // GET: api/DeliveryLineWeb/5
+        // GET: api/DeliveryLineModelApi/5
         [ResponseType(typeof(DeliveryLineModel))]
         public IHttpActionResult GetDeliveryLineModel(int id)
         {
@@ -35,7 +35,7 @@ namespace WebWMS.Controllers.WebApi
             return Ok(deliveryLineModel);
         }
 
-        // PUT: api/DeliveryLineWeb/5
+        // PUT: api/DeliveryLineModelApi/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutDeliveryLineModel(int id, DeliveryLineModel deliveryLineModel)
         {
@@ -70,7 +70,7 @@ namespace WebWMS.Controllers.WebApi
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/DeliveryLineWeb
+        // POST: api/DeliveryLineModelApi
         [ResponseType(typeof(DeliveryLineModel))]
         public IHttpActionResult PostDeliveryLineModel(DeliveryLineModel deliveryLineModel)
         {
@@ -85,7 +85,7 @@ namespace WebWMS.Controllers.WebApi
             return CreatedAtRoute("DefaultApi", new { id = deliveryLineModel.DeliveryLineId }, deliveryLineModel);
         }
 
-        // DELETE: api/DeliveryLineWeb/5
+        // DELETE: api/DeliveryLineModelApi/5
         [ResponseType(typeof(DeliveryLineModel))]
         public IHttpActionResult DeleteDeliveryLineModel(int id)
         {

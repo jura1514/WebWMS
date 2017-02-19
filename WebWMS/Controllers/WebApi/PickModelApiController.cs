@@ -12,44 +12,44 @@ using WebWMS.Models;
 
 namespace WebWMS.Controllers.WebApi
 {
-    public class OrderWebController : ApiController
+    public class PickModelApiController : ApiController
     {
-        private WMSContext db = new WMSContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/OrderWeb
-        public IQueryable<OrderModel> GetOrderModels()
+        // GET: api/PickModelApi
+        public IQueryable<PickModel> GetPickModels()
         {
-            return db.OrderModels;
+            return db.PickModels;
         }
 
-        // GET: api/OrderWeb/5
-        [ResponseType(typeof(OrderModel))]
-        public IHttpActionResult GetOrderModel(int id)
+        // GET: api/PickModelApi/5
+        [ResponseType(typeof(PickModel))]
+        public IHttpActionResult GetPickModel(int id)
         {
-            OrderModel orderModel = db.OrderModels.Find(id);
-            if (orderModel == null)
+            PickModel pickModel = db.PickModels.Find(id);
+            if (pickModel == null)
             {
                 return NotFound();
             }
 
-            return Ok(orderModel);
+            return Ok(pickModel);
         }
 
-        // PUT: api/OrderWeb/5
+        // PUT: api/PickModelApi/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutOrderModel(int id, OrderModel orderModel)
+        public IHttpActionResult PutPickModel(int id, PickModel pickModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != orderModel.OrderId)
+            if (id != pickModel.PickId)
             {
                 return BadRequest();
             }
 
-            db.Entry(orderModel).State = EntityState.Modified;
+            db.Entry(pickModel).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace WebWMS.Controllers.WebApi
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrderModelExists(id))
+                if (!PickModelExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace WebWMS.Controllers.WebApi
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/OrderWeb
-        [ResponseType(typeof(OrderModel))]
-        public IHttpActionResult PostOrderModel(OrderModel orderModel)
+        // POST: api/PickModelApi
+        [ResponseType(typeof(PickModel))]
+        public IHttpActionResult PostPickModel(PickModel pickModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.OrderModels.Add(orderModel);
+            db.PickModels.Add(pickModel);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = orderModel.OrderId }, orderModel);
+            return CreatedAtRoute("DefaultApi", new { id = pickModel.PickId }, pickModel);
         }
 
-        // DELETE: api/OrderWeb/5
-        [ResponseType(typeof(OrderModel))]
-        public IHttpActionResult DeleteOrderModel(int id)
+        // DELETE: api/PickModelApi/5
+        [ResponseType(typeof(PickModel))]
+        public IHttpActionResult DeletePickModel(int id)
         {
-            OrderModel orderModel = db.OrderModels.Find(id);
-            if (orderModel == null)
+            PickModel pickModel = db.PickModels.Find(id);
+            if (pickModel == null)
             {
                 return NotFound();
             }
 
-            db.OrderModels.Remove(orderModel);
+            db.PickModels.Remove(pickModel);
             db.SaveChanges();
 
-            return Ok(orderModel);
+            return Ok(pickModel);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,9 +110,9 @@ namespace WebWMS.Controllers.WebApi
             base.Dispose(disposing);
         }
 
-        private bool OrderModelExists(int id)
+        private bool PickModelExists(int id)
         {
-            return db.OrderModels.Count(e => e.OrderId == id) > 0;
+            return db.PickModels.Count(e => e.PickId == id) > 0;
         }
     }
 }

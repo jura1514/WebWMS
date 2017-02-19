@@ -237,10 +237,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\View\DeliveryLineModelController.cs" />
     <Compile Include="Controllers\View\DeliveryModelController.cs" />
+    <Compile Include="Controllers\View\LocationModelController.cs" />
     <Compile Include="Controllers\View\OrderModelController.cs" />
-    <Compile Include="Controllers\WebApi\DeliveryLineWebController.cs" />
-    <Compile Include="Controllers\WebApi\DeliveryWebController.cs" />
-    <Compile Include="Controllers\WebApi\OrderWebController.cs" />
+    <Compile Include="Controllers\View\PickModelController.cs" />
+    <Compile Include="Controllers\View\ProductModelController.cs" />
+    <Compile Include="Controllers\View\StockModelController.cs" />
+    <Compile Include="Controllers\WebApi\DeliveryLineModelApiController.cs" />
+    <Compile Include="Controllers\WebApi\DeliveryModelApiController.cs" />
+    <Compile Include="Controllers\WebApi\OrderModelApiController.cs" />
+    <Compile Include="Controllers\WebApi\PickModelApiController.cs" />
     <Compile Include="Data\WmsInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -250,7 +255,11 @@
     <Compile Include="Models\DeliveryModel.cs" />
     <Compile Include="Models\DeliveryLineModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LocationModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\PickModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\StockModel.cs" />
     <Compile Include="Models\WMSContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -335,6 +344,26 @@
     <Content Include="Views\OrderModel\Details.cshtml" />
     <Content Include="Views\OrderModel\Edit.cshtml" />
     <Content Include="Views\OrderModel\Index.cshtml" />
+    <Content Include="Views\PickModel\Create.cshtml" />
+    <Content Include="Views\PickModel\Delete.cshtml" />
+    <Content Include="Views\PickModel\Details.cshtml" />
+    <Content Include="Views\PickModel\Edit.cshtml" />
+    <Content Include="Views\PickModel\Index.cshtml" />
+    <Content Include="Views\StockModel\Create.cshtml" />
+    <Content Include="Views\StockModel\Delete.cshtml" />
+    <Content Include="Views\StockModel\Details.cshtml" />
+    <Content Include="Views\StockModel\Edit.cshtml" />
+    <Content Include="Views\StockModel\Index.cshtml" />
+    <Content Include="Views\ProductModel\Create.cshtml" />
+    <Content Include="Views\ProductModel\Delete.cshtml" />
+    <Content Include="Views\ProductModel\Details.cshtml" />
+    <Content Include="Views\ProductModel\Edit.cshtml" />
+    <Content Include="Views\ProductModel\Index.cshtml" />
+    <Content Include="Views\LocationModel\Create.cshtml" />
+    <Content Include="Views\LocationModel\Delete.cshtml" />
+    <Content Include="Views\LocationModel\Details.cshtml" />
+    <Content Include="Views\LocationModel\Edit.cshtml" />
+    <Content Include="Views\LocationModel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

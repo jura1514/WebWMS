@@ -29,5 +29,19 @@ namespace WebWMS.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.DeliveryModel> DeliveryModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.DeliveryLineModel> DeliveryLineModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.ProductModel> ProductModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.OrderModel> OrderModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.PickModel> PickModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.StockModel> StockModels { get; set; }
+
+        public System.Data.Entity.DbSet<WebWMS.Models.LocationModel> LocationModels { get; set; }
     }
 }

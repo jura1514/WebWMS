@@ -1,0 +1,82 @@
+﻿@model WebWMS.Models.PickModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PickModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryLineModel.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryLineModel.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderModel.OrderState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderModel.OrderState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductModel.ProdState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductModel.ProdState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateChangeTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateChangeTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlannedQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlannedQty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PickId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

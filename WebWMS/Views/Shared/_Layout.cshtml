@@ -18,6 +18,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("WMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
@@ -27,6 +30,10 @@
                     <li>@Html.ActionLink("Deliveries", "Index", "DeliveryModel", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Delivery Lines", "Index", "DeliveryLineModel", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Orders", "Index", "OrderModel", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Picks", "Index", "PickModel", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Stock", "Index", "StockModel", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Products", "Index", "ProductModel", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Locations", "Index", "LocationModel", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>

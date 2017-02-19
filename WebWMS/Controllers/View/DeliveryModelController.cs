@@ -12,7 +12,7 @@ namespace WebWMS.Controllers.View
 {
     public class DeliveryModelController : Controller
     {
-        private WMSContext db = new WMSContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: DeliveryModel
         public ActionResult Index()

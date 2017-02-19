@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebWMS.Models.PickModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryLineModel.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderModel.OrderState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductModel.ProdState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateChangeTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlannedQty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryLineModel.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderModel.OrderState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductModel.ProdState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateChangeTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlannedQty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PickId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PickId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PickId })
+        </td>
+    </tr>
+}
+
+</table>

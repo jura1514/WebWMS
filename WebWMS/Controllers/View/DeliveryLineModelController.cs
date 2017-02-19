@@ -12,12 +12,12 @@ namespace WebWMS.Controllers.View
 {
     public class DeliveryLineModelController : Controller
     {
-        private WMSContext db = new WMSContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: DeliveryLineModel
         public ActionResult Index()
         {
-            var deliveryLineModels = db.DeliveryLineModels.Include(d => d.DeliveryModel);
+            var deliveryLineModels = db.DeliveryLineModels.Include(d => d.DeliveryModel).Include(d => d.ProductModel);
             return View(deliveryLineModels.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace WebWMS.Controllers.View
         public ActionResult Create()
         {
             ViewBag.DeliveryId = new SelectList(db.DeliveryModels, "DeliveryId", "Name");
+            ViewBag.Product = new SelectList(db.ProductModels, "ProdId", "ProdId");
             return View();
         }
 
@@ -58,6 +59,7 @@ namespace WebWMS.Controllers.View
             }
 
             ViewBag.DeliveryId = new SelectList(db.DeliveryModels, "DeliveryId", "Name", deliveryLineModel.DeliveryId);
+            ViewBag.Product = new SelectList(db.ProductModels, "ProdId", "ProdState", deliveryLineModel.Product);
             return View(deliveryLineModel);
         }
 
@@ -74,6 +76,7 @@ namespace WebWMS.Controllers.View
                 return HttpNotFound();
             }
             ViewBag.DeliveryId = new SelectList(db.DeliveryModels, "DeliveryId", "Name", deliveryLineModel.DeliveryId);
+            ViewBag.Product = new SelectList(db.ProductModels, "ProdId", "ProdState", deliveryLineModel.Product);
             return View(deliveryLineModel);
         }
 
@@ -91,6 +94,7 @@ namespace WebWMS.Controllers.View
                 return RedirectToAction("Index");
             }
             ViewBag.DeliveryId = new SelectList(db.DeliveryModels, "DeliveryId", "Name", deliveryLineModel.DeliveryId);
+            ViewBag.Product = new SelectList(db.ProductModels, "ProdId", "ProdState", deliveryLineModel.Product);
             return View(deliveryLineModel);
         }
 

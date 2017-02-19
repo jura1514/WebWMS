@@ -10,6 +10,12 @@ namespace WebWMS.Models
 {
     public partial class DeliveryLineModel
     {
+        public DeliveryLineModel()
+        {
+            Picks = new HashSet<PickModel>();
+            StockList = new HashSet<StockModel>();
+        }
+
         [Key]
         public int DeliveryLineId { get; set; }
 
@@ -30,6 +36,16 @@ namespace WebWMS.Models
         [JsonIgnore]
         [ForeignKey("DeliveryId")]
         public virtual DeliveryModel DeliveryModel { get; set; }
+
+        [JsonIgnore]
+        [ForeignKey("Product")]
+        public virtual ProductModel ProductModel { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<PickModel> Picks { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<StockModel> StockList { get; set; }
 
     }
 }
