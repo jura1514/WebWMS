@@ -253,6 +253,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DeliveryModel.cs" />
     <Compile Include="Models\DeliveryLineModel.cs" />
@@ -263,7 +264,6 @@
     <Compile Include="Models\PickModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\StockModel.cs" />
-    <Compile Include="Models\WMSContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\DeliveryLineRepository.cs" />
@@ -367,24 +367,26 @@
     <Content Include="Views\LocationModel\Details.cshtml" />
     <Content Include="Views\LocationModel\Edit.cshtml" />
     <Content Include="Views\LocationModel\Index.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\AccountView\ConfirmEmail.cshtml" />
+    <Content Include="Views\AccountView\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\AccountView\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\AccountView\ForgotPassword.cshtml" />
+    <Content Include="Views\AccountView\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\AccountView\Login.cshtml" />
+    <Content Include="Views\AccountView\Register.cshtml" />
+    <Content Include="Views\AccountView\ResetPassword.cshtml" />
+    <Content Include="Views\AccountView\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\AccountView\SendCode.cshtml" />
+    <Content Include="Views\AccountView\VerifyCode.cshtml" />
+    <Content Include="Views\AccountView\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

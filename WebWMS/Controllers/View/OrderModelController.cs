@@ -10,6 +10,7 @@ using WebWMS.Models;
 
 namespace WebWMS.Controllers.View
 {
+    [Authorize]
     public class OrderModelController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

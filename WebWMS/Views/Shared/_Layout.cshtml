@@ -34,8 +34,10 @@
                     <li>@Html.ActionLink("Stock", "Index", "StockModel", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Products", "Index", "ProductModel", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Locations", "Index", "LocationModel", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Manage", "Index", "Manage", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
