@@ -1,16 +1,19 @@
 ﻿@model IEnumerable<WebWMS.Models.LocationModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage Location";
 }
 
-<h2>Index</h2>
+<h2>Locations:</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.LocState)
         </th>
@@ -22,6 +25,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationId)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.LocState)
         </td>

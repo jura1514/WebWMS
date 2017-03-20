@@ -3,10 +3,15 @@
     padding-bottom: 20px;
 }
 
+.homepage {
+    background-image: url(Images/warehouse-led.jpg);
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #eee;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */

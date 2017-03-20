@@ -246,8 +246,10 @@
     <Compile Include="Controllers\View\StockModelController.cs" />
     <Compile Include="Controllers\WebApi\DeliveryLineModelApiController.cs" />
     <Compile Include="Controllers\WebApi\DeliveryModelApiController.cs" />
+    <Compile Include="Controllers\WebApi\LocationModelApiController.cs" />
     <Compile Include="Controllers\WebApi\OrderModelApiController.cs" />
     <Compile Include="Controllers\WebApi\PickModelApiController.cs" />
+    <Compile Include="Controllers\WebApi\ProductModelApiController.cs" />
     <Compile Include="Data\WmsInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,6 +284,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Images\warehouse-led.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -306,6 +309,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\myWebWMS - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
